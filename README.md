@@ -1,6 +1,6 @@
 # webtail
 
-go web tail file service or server
+go web tail file service or server , show log file content in browser real time.
 
 ## Usage
 
