@@ -24,7 +24,7 @@ func main() {
 
 then access :
 
-http://127.0.0.1:8822/show/***logfilename***#width=100%&height=300px
+`http://127.0.0.1:8822/show/***logfilename***#width=100%&height=300px`
 
 ***logfilename*** is the log file name (no extension) in `./logs`
 
