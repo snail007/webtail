@@ -1,24 +1,26 @@
 # webtail
+
 go web tail file service or server
+
 ## Usage
 
 ```golang
 package main
 
 import (
-	"log"
-	"github.com/snail007/webtail"
+    "log"
+    "github.com/snail007/webtail"
 )
 
 func main() {
-	address := ":8822"
-	basedir = "./logs"
-	listener, err := webtail.Serve(address, basedir)
-	if err != nil {
-		log.Fatal(err)
-	}
-	log.Printf("tail server on %s",listener.Addr())
-	select {}
+    address := ":8822"
+    basedir = "./logs"
+    listener, err := webtail.Serve(address, basedir)
+    if err != nil {
+        log.Fatal(err)
+    }
+    log.Printf("tail server on %s",(*listener).Addr())
+    select {}
 }
 ```
 
@@ -30,3 +32,4 @@ then access :
 
 width=100%&height=300px is the div width and height which show log text .
 
+the web page will show log content in real time.

@@ -3,7 +3,6 @@ package webtail
 import (
 	"bufio"
 	"errors"
-	"flag"
 	"fmt"
 	"io"
 	"log"
@@ -127,23 +126,8 @@ func ViewLog(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
 
 var (
 	basedir string
-	address string
 )
 
-// example: http://127.0.0.1:8100/show/wget#height=300px&width=100%
-// "height=300px&width=100%" is the div of log height and width
-
-func main() {
-	flag.StringVar(&basedir, "d", "", "dir path of log files")
-	flag.StringVar(&address, "l", ":8100", "listen address")
-	flag.Parse()
-	if basedir == "" {
-		flag.Usage()
-		return
-	}
-	Serve(address, basedir)
-	select {}
-}
 func Serve(address, logDir string) (listener *net.Listener, err error) {
 	basedir = logDir
 	l, err := net.Listen("tcp", address)
