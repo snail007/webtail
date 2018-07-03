@@ -37,3 +37,12 @@ the web page will show log content in real time.
 ## Binary
 
 you can also use prebuild binary , you can get it [here](/releases)
+
+```text
+Usage of ./webtail:
+  -d string
+        dir path of log files
+  -l string
+        listen address (default ":8100")
+  -v     show version
+```
