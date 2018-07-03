@@ -28,7 +28,9 @@ then access :
 
 `http://127.0.0.1:8822/show/logfilename#width=100%&height=300px`
 
-***logfilename*** is the log file name (no extension) in `./logs`
+***logfilename*** is the log file name (no extension) in `./logs` ,
+
+all log files in `./logs` must has extension of `.log`
 
 width=100%&height=300px is the div width and height which show log text .
 
