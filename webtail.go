@@ -82,7 +82,7 @@ func ViewLog(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
 		log.Printf("sedd log file stat fail , %s", err)
 	}
 	reader := bufio.NewReader(file)
-	timer := time.NewTicker(time.Second)
+	timer := time.NewTicker(time.Millisecond * 200)
 	go func() {
 		defer func() {
 			conn.Close()
@@ -211,19 +211,12 @@ func TailN(filename string, numLines int) (string, error) {
 	//READ TO END OF FILE
 	//add "1" here to move offset from the newline position to first character in line of text
 	//this position should be the first character in the "first" line of data we want
-	b := make([]byte, 1024)
-	_, err = file.ReadAt(b, finalReadStartPos+1)
-	if err == io.EOF {
-		return string(b), nil
-	} else if err != nil {
-		return "", err
+	b := make([]byte, 4096)
+	n, err := file.ReadAt(b, finalReadStartPos+1)
+	if n > 0 {
+		return string(b[:n]), nil
 	}
-
-	//special case
-	//if text is read, then err == io.EOF should hit
-	//there should *never* not be an error above
-	//so this line should never return
-	return "**No error but no text read.**", nil
+	return "", err
 }
 
 var homeTemplate = template.Must(template.New("").Parse(`
