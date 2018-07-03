@@ -36,7 +36,7 @@ the web page will show log content in real time.
 
 ## Binary
 
-you can also use prebuild binary , you can get it [here](/releases)
+you can also use prebuild binary , you can get it [here](../..//releases)
 
 ```text
 Usage of ./webtail:
