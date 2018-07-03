@@ -145,6 +145,7 @@ func main() {
 	select {}
 }
 func Serve(address, logDir string) (listener *net.Listener, err error) {
+	basedir = logDir
 	l, err := net.Listen("tcp", address)
 	if err != nil {
 		return
