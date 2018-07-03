@@ -1,6 +1,6 @@
 # webtail
 
-go web tail file service or server , show log file content in browser real time.
+golang implement of "tail -f" unix like, which in web browser , show log file content in browser real time.
 
 ## Usage
 
@@ -33,3 +33,7 @@ then access :
 width=100%&height=300px is the div width and height which show log text .
 
 the web page will show log content in real time.
+
+## Binary
+
+you can also use prebuild binary , you can get it [here](/releases)
